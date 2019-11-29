@@ -1,2 +1,0 @@
-- cat ff_g* > ff_g.tar.gz
-- tar xzvf ff_g.tar.gz
