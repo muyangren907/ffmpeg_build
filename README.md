@@ -30,7 +30,7 @@ ffmpeg -codecs | grep cuvid
 ```bash
 ffmpeg -hwaccel cuvid -c:v h264_cuvid -i <input> -c:v hevc_nvenc -b:v 6000k -y <output>
 
-ffmpeg -hwaccel cuvid -c:v vc1_cuvid -i MIDE-109.wmv -c:v hevc_nvenc  -preset slow -tier high -rc vbr_hq -2pass 1 -b:v 5000k -bufsize 5000k -y o.mp4
+ffmpeg -hwaccel cuvid -c:v vc1_cuvid -i 1.wmv -c:v hevc_nvenc  -preset slow -tier high -rc vbr_hq -2pass 1 -b:v 5000k -bufsize 5000k -y 1.mp4
 ```
 
 -hwaccel cuvid：指定使用cuvid硬件加速
