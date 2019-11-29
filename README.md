@@ -4,3 +4,6 @@
 - CUDA 10.0
 
 > chmod +x fb.sh && ./fb.sh
+
+
+- ffmpeg -hwaccels
