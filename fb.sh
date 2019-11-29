@@ -10,13 +10,16 @@ sudo apt-get install libopus-dev
 sudo apt-get -y install glew-utils libglew-dbg libglew-dev libglew1.13 \
 libglewmx-dev libglewmx-dbg freeglut3 freeglut3-dev freeglut3-dbg libghc-glut-dev libghc-glut-doc libghc-glut-prof libalut-dev libxmu-dev libxmu-headers libxmu6 libxmu6-dbg libxmuu-dev libxmuu1 libxmuu1-dbg
 git clone https://git.ffmpeg.org/ffmpeg.git
-git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
-cd nv-codec-headers
+# git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
+wget "https://github.com/FFmpeg/nv-codec-headers/archive/n9.0.18.3.tar.gz"
+tar xzvf n9.0.18.3.tar.gz
+cd nv-codec-headers-n9.0.18.3
+#cd nv-codec-headers
 make
 sudo make install
 cd ..
 cd ffmpeg
-./configure --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda-10.0/include --extra-ldflags=-L/usr/local/cuda-10.0/lib64
+./configure --enable-cuda --enable-cuvid --enable-nvenc --enable-nonfree --enable-libnpp --extra-cflags=-I/usr/local/cuda-10.1/include --extra-ldflags=-L/usr/local/cuda-10.1/lib64
 make -j 10
 cp ffmpeg /usr/bin
 cp ffplay /usr/bin
